@@ -11,10 +11,10 @@ const validateUserId = async (req, res, next) => {
     next();
 }
 
-
-
 router.post('/pix', pixController.create);
 
-router.get('/pix/:userId/:type', validateUserId, pixController.index);
+router.get('/pix', pixController.index);
+
+router.get('/pix/:userId/:type', validateUserId, pixController.show);
 
 module.exports = router;

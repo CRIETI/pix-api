@@ -5,12 +5,23 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "177.44.248.30/v1",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http"
   ],
   "paths": {
+    "/users": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/pix": {
       "post": {
         "description": "",
@@ -35,6 +46,15 @@
             "description": "Bad Request"
           }
         }
+      },
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/pix/{userId}/{type}": {
@@ -51,7 +71,8 @@
             "name": "type",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "sent or received"
           }
         ],
         "responses": {

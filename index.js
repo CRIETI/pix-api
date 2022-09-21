@@ -11,7 +11,12 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use('/docs', function (req, res, next) {
+  swaggerFile.host = req.get('host');
+  req.swaggerDoc = swaggerFile;
+  next();
+}, swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
 app.use(express.json());
 
 app.use((req, res, next) => {

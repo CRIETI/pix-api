@@ -12,8 +12,8 @@ const validateUserId = async (req, res, next) => {
 
 router.get('/users', usersController.index);
 
-router.post('/users', usersController.create);
+//router.post('/users', usersController.create);
 
-router.get('/users/:userId', validateUserId, usersController.show);
+//router.get('/users/:userId', validateUserId, usersController.show);
 
 module.exports = router;

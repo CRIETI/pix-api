@@ -5,7 +5,7 @@ const pix = require('./pix');
 
 router.use(cors());
 
-// router.use(users);
+router.use(users);
 router.use(pix);
 
 
