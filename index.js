@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use('/docs', function (req, res, next) {
-  swaggerFile.host = req.get('host');
+  swaggerFile.host = '177.44.248.30/v1/';
   req.swaggerDoc = swaggerFile;
   next();
 }, swaggerUi.serve, swaggerUi.setup(swaggerFile));
